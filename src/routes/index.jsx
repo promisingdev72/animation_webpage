@@ -1,12 +1,12 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
 
-import NewsPage from "../pages/news";
+import HomePage from "../pages/home";
 import CalendarPage from "../pages/calendars";
 
 export default function Routes() {
   return useRoutes([
-    { path: "/newstab", element: <NewsPage /> },
+    { path: "/", element: <HomePage /> },
     { path: "/calendarsaccordion", element: <CalendarPage /> },
   ]);
 }
