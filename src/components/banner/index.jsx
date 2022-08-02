@@ -16,9 +16,19 @@ export default function Banner() {
           className="horizontal_lines"
           src="/horizontal_lines.png"
         />
-        <Box component="p" className="banner_text1">
-          Video games
+        <Box component="div" className="banner_text">
+          <Box component="p" m={0} className="banner_text1">
+            Video games
+          </Box>
+          <Box component="p" m={0} className="banner_text2">
+            developer
+          </Box>
         </Box>
+        <Box component="p" m={0} className="banner_text3">
+          Game developer Company
+        </Box>
+        <Box component="img" className="lines" src="/lines.png" />
+        <Box component="img" className="doll" src="/doll.png" />
       </Box>
     </>
   );

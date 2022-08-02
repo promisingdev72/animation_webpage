@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
+
 @keyframes logo {
   from {
     opacity: 0;
@@ -37,6 +39,15 @@
   }
 }
 
+@keyframes lines {
+  from {
+    top: 0;
+  }
+  to {
+    top: 75%;
+  }
+}
+
 .bannerBack {
   position: relative;
   width: 100%;
@@ -70,11 +81,6 @@
   height: 840px;
   width: 340px;
 }
-.horizontal_lines {
-  position: absolute;
-  right: 130px;
-  bottom: 150px;
-}
 .pillar1 {
   position: absolute;
   right: 0;
@@ -98,4 +104,61 @@
   animation-duration: 4s;
   animation-timing-function: ease;
   animation-direction: normal;
+}
+.horizontal_lines {
+  position: absolute;
+  right: 130px;
+  bottom: 150px;
+}
+.banner_text {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+}
+.banner_text1 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 59px;
+  text-transform: uppercase;
+  color: #d3d2d2;
+  text-shadow: 14px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.banner_text2 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 59px;
+  text-transform: uppercase;
+  color: rgba(198, 53, 24, 1);
+  text-shadow: 14px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.banner_text3 {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -70%);
+  font-family: "Montserrat Alternates";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 14px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.lines {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-name: lines;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-direction: normal;
+}
+.doll {
+  position: absolute;
+  top: 0;
+  left: 50%;
 }
