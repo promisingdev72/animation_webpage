@@ -416,10 +416,15 @@
   line-height: 22px;
   color: #ffffff;
 }
-.whatwedoimg {
+.whatwedoimg1 {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+.whatwedoimg2 {
+  position: absolute;
+  right: -100px;
+  bottom: 250px;
 }
 .footerback {
   position: relative;
@@ -454,4 +459,7 @@
   position: absolute;
   right: 0;
   top: 0;
+}
+.none {
+  display: none;
 }

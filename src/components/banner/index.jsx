@@ -1,5 +1,4 @@
 import { Box, Button } from "@mui/material";
-import * as React from "react";
 
 import "../css.css";
 
