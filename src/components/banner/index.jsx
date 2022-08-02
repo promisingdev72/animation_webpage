@@ -27,8 +27,8 @@ export default function Banner() {
         <Box component="p" m={0} className="banner_text3">
           Game developer Company
         </Box>
-        <Box component="img" className="lines" src="/lines.png" />
-        <Box component="img" className="doll" src="/doll.png" />
+        {/* <Box component="img" className="lines" src="/lines.png" />
+        <Box component="img" className="doll" src="/doll.png" /> */}
       </Box>
     </>
   );
