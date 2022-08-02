@@ -15,9 +15,9 @@
     background-color: #fff;
   }
   to {
-    bottom: 705px;
+    bottom: 698px;
     height: 16px;
-    width: 320px;
+    width: 310px;
     background-color: #ccd6d8;
   }
 }
@@ -30,9 +30,9 @@
     background-color: #ccd6d8;
   }
   to {
-    bottom: 698px;
+    bottom: 715px;
     height: 5px;
-    width: 310px;
+    width: 320px;
     background-color: #fff;
   }
 }
@@ -61,7 +61,7 @@
   transform: translate(-50%, -50%);
   opacity: 1;
   animation-name: logo;
-  animation-duration: 2s;
+  animation-duration: 3s;
 }
 .unhome {
   position: absolute;
@@ -70,14 +70,18 @@
   height: 840px;
   width: 340px;
 }
+.horizontal_lines {
+  position: absolute;
+  right: 130px;
+  bottom: 150px;
+}
 .pillar1 {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 700px;
+  height: 16px;
+  width: 310px;
   background-color: #ccd6d8;
-  border: 2px solid #000000;
-  width: 340px;
-  height: 56px;
   animation-name: pillar1;
   animation-duration: 4s;
   animation-timing-function: ease;
@@ -86,11 +90,10 @@
 .pillar2 {
   position: absolute;
   right: 0;
-  bottom: 58px;
-  background-color: #ffffff;
-  border: 2px solid #000000;
-  width: 260px;
-  height: 56px;
+  bottom: 718px;
+  height: 5px;
+  width: 320px;
+  background-color: #fff;
   animation-name: pillar2;
   animation-duration: 4s;
   animation-timing-function: ease;
