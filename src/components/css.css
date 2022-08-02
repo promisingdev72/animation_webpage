@@ -116,6 +116,60 @@
     pointer-events: auto;
   }
 }
+@keyframes lineforpad {
+  0% {
+    opacity: 0;
+    top: 200px;
+    left: 830px;
+    height: 350px;
+  }
+  50% {
+    opacity: 0.7;
+    top: -100px;
+    left: 830px;
+    height: 150px;
+  }
+  100% {
+    opacity: 1;
+    top: -200px;
+    left: 830px;
+    height: 350px;
+  }
+}
+@keyframes gamepadImg {
+  from {
+    top: 100px;
+    left: 680px;
+    opacity: 0;
+    transform: scale(0.5, 0.5) rotate(-50deg);
+  }
+  to {
+    opacity: 1;
+    top: 120px;
+    left: 658px;
+    transform: scale(1, 1) rotate(0deg);
+  }
+}
+@keyframes whatwedoimg1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes whatwedoimg2 {
+  from {
+    opacity: 0;
+    right: -100px;
+    bottom: 250px;
+  }
+  to {
+    opacity: 1;
+    right: 170px;
+    bottom: 250px;
+  }
+}
 
 .bannerBack {
   position: relative;
@@ -364,16 +418,31 @@
   z-index: 1;
 }
 .lineforpad {
+  opacity: 0;
   z-index: 1;
   position: absolute;
-  top: -200px;
+  top: 200px;
   left: 830px;
   height: 350px;
+  animation-name: lineforpad;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-direction: normal;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 .gamepadImg {
+  opacity: 0;
   position: absolute;
-  top: 118px;
-  left: 655px;
+  top: 100px;
+  left: 680px;
+  transform: scale(0.5, 0.5) rotate(-50deg);
+  animation-name: gamepadImg;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-direction: normal;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
 }
 .whatwedo_wrap {
   position: absolute;
@@ -417,14 +486,28 @@
   color: #ffffff;
 }
 .whatwedoimg1 {
+  opacity: 0;
   position: absolute;
   right: 0;
   bottom: 0;
+  animation-name: whatwedoimg1;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-direction: normal;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
 }
 .whatwedoimg2 {
+  opacity: 0;
   position: absolute;
   right: -100px;
   bottom: 250px;
+  animation-name: whatwedoimg2;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-direction: normal;
+  animation-delay: 8s;
+  animation-fill-mode: forwards;
 }
 .footerback {
   position: relative;
@@ -453,6 +536,15 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
+  color: #ffffff;
+}
+.footerText2 {
+  font-family: "Gotham";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
   color: #ffffff;
 }
 .footerImage {

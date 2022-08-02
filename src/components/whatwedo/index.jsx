@@ -23,7 +23,7 @@ export default function WhatWeDo() {
   }, []);
 
   useEffect(() => {
-    if (scrollPosition === 1000) {
+    if (scrollPosition >= 1000 && scrollPosition <= 1100) {
       setGamepadImg("gamepadImg");
       setLineforpad("lineforpad");
       setWhatwedoimg1("whatwedoimg1");
