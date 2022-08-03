@@ -1,8 +1,10 @@
 import * as Yup from "yup";
 import { Box, Button, Stack, Typography, TextField } from "@mui/material";
+import axios from "axios";
 import { useMediaQuery } from "react-responsive";
 import { useFormik, Form, FormikProvider } from "formik";
 
+import { HOST_API } from "../../config";
 import "../css.css";
 
 export default function Request() {
@@ -26,8 +28,18 @@ export default function Request() {
     validationSchema: RequestSchema,
     onSubmit: async (values, { setErrors, setSubmitting, resetForm }) => {
       try {
+        axios({
+          url: `${HOST_API}/api/request`,
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          data: values,
+        }).then((res) => {
+          console.log("sucess");
+        });
         console.log(values);
-        resetForm();
+        // resetForm();
       } catch (error) {
         console.error(error);
       }
@@ -62,7 +74,7 @@ export default function Request() {
               <Typography className="requestText1">Send a request</Typography>
               <FormikProvider value={formik}>
                 <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
-                  <Typography className="label" mt={2}>
+                  <Typography className="label" mt={2} ml={2}>
                     Your name
                   </Typography>
                   <TextField
@@ -73,7 +85,7 @@ export default function Request() {
                     error={Boolean(touched.name && errors.name)}
                     helperText={touched.name && errors.name}
                   />
-                  <Typography className="label" mt={2}>
+                  <Typography className="label" mt={2} ml={2}>
                     Your e-mail
                   </Typography>
                   <TextField
@@ -84,7 +96,7 @@ export default function Request() {
                     error={Boolean(touched.email && errors.email)}
                     helperText={touched.email && errors.email}
                   />
-                  <Typography className="label" mt={2}>
+                  <Typography className="label" mt={2} ml={2}>
                     Please write here your request, and we will contact you:
                   </Typography>
                   <TextField
@@ -113,7 +125,7 @@ export default function Request() {
               <Typography className="requestText2">Send a request</Typography>
               <FormikProvider value={formik}>
                 <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
-                  <Typography className="label" mt={2}>
+                  <Typography className="label" mt={2} ml={2}>
                     Your name
                   </Typography>
                   <TextField
@@ -124,7 +136,7 @@ export default function Request() {
                     error={Boolean(touched.name && errors.name)}
                     helperText={touched.name && errors.name}
                   />
-                  <Typography className="label" mt={2}>
+                  <Typography className="label" mt={2} ml={2}>
                     Your e-mail
                   </Typography>
                   <TextField
@@ -135,7 +147,7 @@ export default function Request() {
                     error={Boolean(touched.email && errors.email)}
                     helperText={touched.email && errors.email}
                   />
-                  <Typography className="label" mt={2}>
+                  <Typography className="label" mt={2} ml={2}>
                     Please write here your request, and we will contact you:
                   </Typography>
                   <TextField
