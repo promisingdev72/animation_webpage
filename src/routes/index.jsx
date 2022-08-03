@@ -2,6 +2,7 @@ import React from "react";
 import { useRoutes } from "react-router-dom";
 import MainLayout from "../layouts/main";
 import HomePage from "../pages/home";
+import RequestPage from "../pages/request";
 
 export default function Routes() {
   return useRoutes([
@@ -13,7 +14,7 @@ export default function Routes() {
     {
       path: "/request",
       element: <MainLayout />,
-      children: [{ element: <HomePage />, index: true }],
+      children: [{ element: <RequestPage />, index: true }],
     },
   ]);
 }
