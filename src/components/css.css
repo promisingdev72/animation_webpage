@@ -683,7 +683,6 @@
 }
 .logoWrap {
   position: relative;
-  width: 100%;
   padding: 3% 0 1% 15%;
 }
 .logoWrap::after {

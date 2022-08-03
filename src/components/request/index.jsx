@@ -31,8 +31,6 @@ export default function Request() {
 
   const { reset, handleSubmit } = methods;
 
-  console.log("handleSubmit", handleSubmit);
-
   const onSubmit = async (data) => {
     try {
       console.log("data", data);
