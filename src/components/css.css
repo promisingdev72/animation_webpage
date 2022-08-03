@@ -220,11 +220,6 @@
   height: 100%;
   background-size: cover;
   background: linear-gradient(
-      161.44deg,
-      rgba(193, 5, 19, 0.1) 12.57%,
-      rgba(0, 0, 0, 0) 76.73%
-    ),
-    linear-gradient(
       286.42deg,
       rgba(193, 5, 19, 0.2) 8.68%,
       rgba(0, 0, 0, 0) 35.64%
@@ -247,11 +242,6 @@
   height: 100%;
   background-size: cover;
   background: linear-gradient(
-      161.44deg,
-      rgba(193, 5, 19, 0.1) 12.57%,
-      rgba(0, 0, 0, 0) 76.73%
-    ),
-    linear-gradient(
       286.42deg,
       rgba(193, 5, 19, 0.2) 8.68%,
       rgba(0, 0, 0, 0) 35.64%
@@ -436,6 +426,7 @@
   background: #c63518 !important;
   width: 300px;
   height: 60px;
+  text-transform: initial !important;
   pointer-events: none;
   font-family: "Gotham";
   font-size: 18px !important;
@@ -448,6 +439,7 @@
   animation-fill-mode: forwards;
 }
 .mrequestBtn {
+  text-transform: initial !important;
   background: #c63518 !important;
   width: 300px;
   height: 60px;
@@ -462,11 +454,6 @@
   height: 100vh;
   background-size: cover;
   background: linear-gradient(
-      161.44deg,
-      rgba(193, 5, 19, 0.1) 12.57%,
-      rgba(0, 0, 0, 0) 76.73%
-    ),
-    linear-gradient(
       286.42deg,
       rgba(193, 5, 19, 0.2) 8.68%,
       rgba(0, 0, 0, 0) 35.64%
@@ -545,6 +532,7 @@
   animation-fill-mode: forwards;
 }
 .gamepadImg {
+  z-index: 1;
   opacity: 0;
   position: absolute;
   top: 100px;
@@ -570,11 +558,6 @@
   height: 85vh;
   background-size: cover;
   background: linear-gradient(
-      161.44deg,
-      rgba(193, 5, 19, 0.1) 12.57%,
-      rgba(0, 0, 0, 0) 76.73%
-    ),
-    linear-gradient(
       286.42deg,
       rgba(193, 5, 19, 0.2) 8.68%,
       rgba(0, 0, 0, 0) 35.64%
@@ -633,7 +616,6 @@
   color: #c63518;
 }
 .whatwedotext_mobile {
-  padding: 0 20px;
   font-family: "Gotham";
   font-style: normal;
   font-weight: 400;
@@ -650,11 +632,6 @@
   height: 100px;
   background-size: cover;
   background: linear-gradient(
-      161.44deg,
-      rgba(193, 5, 19, 0.1) 12.57%,
-      rgba(0, 0, 0, 0) 76.73%
-    ),
-    linear-gradient(
       286.42deg,
       rgba(193, 5, 19, 0.2) 8.68%,
       rgba(0, 0, 0, 0) 35.64%

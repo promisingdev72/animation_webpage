@@ -14,7 +14,7 @@ export default function WhoWeAreMobile() {
           spacing={2}
           pt={7}
         >
-          <Box pl={2}>
+          <Box pl={4}>
             <Box component="p" m={0} className="whowearetitle_mobile">
               Who we are
             </Box>
