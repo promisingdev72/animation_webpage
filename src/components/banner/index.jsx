@@ -28,7 +28,7 @@ export default function Banner() {
         </Box>
         <Box component="img" className="lines" src="/images/lines.png" />
         <Box component="img" className="doll" src="/images/doll.png" />
-        <Button variant="contained" className="requestBtn">
+        <Button variant="contained" className="requestBtn" href="/request">
           Submit your request
         </Button>
       </Box>

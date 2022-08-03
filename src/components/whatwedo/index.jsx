@@ -38,7 +38,6 @@ export default function WhatWeDo() {
           className={lineforpad}
           src="/images/lineforpad.png"
         />
-
         <Box component="img" className={gamepadImg} src="/images/gamepad.png" />
         <Box className="whatwedo_wrap">
           <Box component="p" m={0} className="whatwedo_title">

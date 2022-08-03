@@ -27,11 +27,7 @@ export default function WhoWeAreMobile() {
               the corporate side (business plans, investors).
             </Box>
           </Box>
-          <Box
-            component="img"
-            src="/images/mobile_home.png"
-            className="mobile_banner"
-          />
+          <Box component="img" src="/images/mobile_home.png" />
         </Stack>
       </Box>
     </>

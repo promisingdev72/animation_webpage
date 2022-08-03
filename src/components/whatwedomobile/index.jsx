@@ -17,7 +17,7 @@ export default function WhatWeDoMobile() {
             src="/images/mobile_gamepad.png"
             className="mobile_gamepad"
           />
-          <Box pl={2}>
+          <Box px={10}>
             <Box component="p" m={0} className="whatwedotitle_mobile">
               What we do
             </Box>
