@@ -26,7 +26,7 @@ export default function BannerMobile() {
               developer
             </Box>
           </Typography>
-          <Button variant="contained" className="mrequestBtn">
+          <Button variant="contained" className="mrequestBtn" href="/request">
             Submit your request
           </Button>
         </Stack>
