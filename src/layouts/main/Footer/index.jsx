@@ -11,15 +11,17 @@ export default function Footer() {
   return (
     <>
       <Box className="footerback">
-        <Box
-          component="p"
-          m={0}
-          className={isDesktop ? "footerText" : "footerText2"}
-        >
-          {isDesktop
-            ? "Copyright © 2022 Alitheia-Studios. All rights reserved."
-            : "Copyright © 2022 Alitheia-Studios. All rights reserved."}
-        </Box>
+        {isDesktop && (
+          <Box component="p" m={0} className="footerText">
+            Copyright © 2022 Alitheia-Studios. All rights reserved.
+          </Box>
+        )}
+        {!isDesktop && (
+          <Box component="p" m={0} className="footerText2">
+            Copyright © 2022 Alitheia-Studios.
+            <br /> All rights reserved.
+          </Box>
+        )}
         {isDesktop && (
           <Box
             component="img"

@@ -2,8 +2,8 @@ import Banner from "../../components/banner";
 import WhatWeDo from "../../components/whatwedo";
 import WhoWeAre from "../../components/whoweare";
 import BannerMobile from "../../components/bannermobile";
-import WhoWeAreMobile from "../../components/whatwedomobile";
-import WhatWeDoMobile from "../../components/whowearemobile";
+import WhoWeAreMobile from "../../components/whowearemobile";
+import WhatWeDoMobile from "../../components/whatwedomobile";
 import { useMediaQuery } from "react-responsive";
 
 const HomePage = () => {

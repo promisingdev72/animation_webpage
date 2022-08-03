@@ -198,6 +198,93 @@
   width: 35%;
   background-color: #c63518;
 }
+.mbannerBack {
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background: linear-gradient(
+      161.44deg,
+      rgba(193, 5, 19, 0.1) 12.57%,
+      rgba(0, 0, 0, 0) 76.73%
+    ),
+    linear-gradient(
+      286.42deg,
+      rgba(193, 5, 19, 0.2) 8.68%,
+      rgba(0, 0, 0, 0) 35.64%
+    ),
+    linear-gradient(#282b33, #282b33);
+  border-bottom: #c63518 4px solid;
+}
+.mwhoweareBack {
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background: linear-gradient(
+      161.44deg,
+      rgba(193, 5, 19, 0.1) 12.57%,
+      rgba(0, 0, 0, 0) 76.73%
+    ),
+    linear-gradient(
+      286.42deg,
+      rgba(193, 5, 19, 0.2) 8.68%,
+      rgba(0, 0, 0, 0) 35.64%
+    ),
+    linear-gradient(#282b33, #282b33);
+}
+.mwhoweareBack::after {
+  z-index: 2;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  width: 70%;
+  background-color: #c63518;
+}
+.mwhatwedoBack {
+  padding-bottom: 50px;
+  position: relative;
+  height: 100%;
+  background-size: cover;
+  background: linear-gradient(
+      161.44deg,
+      rgba(193, 5, 19, 0.1) 12.57%,
+      rgba(0, 0, 0, 0) 76.73%
+    ),
+    linear-gradient(
+      286.42deg,
+      rgba(193, 5, 19, 0.2) 8.68%,
+      rgba(0, 0, 0, 0) 35.64%
+    ),
+    linear-gradient(#282b33, #282b33);
+}
+.mbannerText1 {
+  margin-top: -150px !important;
+  font-family: "Montserrat_Alternates" !important;
+  font-style: normal;
+  font-size: 24px !important;
+  font-weight: 700;
+  line-height: 29px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 14px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.mbannerText2 {
+  font-family: "Montserrat_Alternates" !important;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px !important;
+  line-height: 44px;
+  text-transform: uppercase;
+  color: #d3d2d2;
+  text-align: center;
+  text-shadow: 14px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.mobile_doll {
+  margin-top: 50px !important;
+  margin-left: -20px !important;
+}
 .logo {
   position: absolute;
   top: 40%;
@@ -360,6 +447,15 @@
   animation-delay: 20s;
   animation-fill-mode: forwards;
 }
+.mrequestBtn {
+  background: #c63518 !important;
+  width: 300px;
+  height: 60px;
+  font-family: "Gotham";
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  margin-bottom: 120px !important;
+}
 .whoareweBack {
   position: relative;
   width: 100%;
@@ -416,6 +512,23 @@
   right: 0;
   top: 0;
   z-index: 1;
+}
+.whowearetitle_mobile {
+  font-family: "Montserrat_Alternates";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-transform: uppercase;
+  color: #c63518;
+}
+.whowearetext_mobile {
+  font-family: "Gotham";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
 }
 .lineforpad {
   opacity: 0;
@@ -508,6 +621,25 @@
   animation-direction: normal;
   animation-delay: 8s;
   animation-fill-mode: forwards;
+}
+.whatwedotitle_mobile {
+  text-align: center;
+  font-family: "Montserrat_Alternates";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px !important;
+  line-height: 29px;
+  text-transform: uppercase;
+  color: #c63518;
+}
+.whatwedotext_mobile {
+  padding: 0 20px;
+  font-family: "Gotham";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
 }
 .footerback {
   position: relative;
