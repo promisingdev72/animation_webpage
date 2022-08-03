@@ -1,9 +1,7 @@
 import * as Yup from "yup";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { Box, Button, Stack, Typography, TextField } from "@mui/material";
 import { useMediaQuery } from "react-responsive";
-import { FormProvider as Form } from "react-hook-form";
+import { useFormik, Form, FormikProvider } from "formik";
 
 import "../css.css";
 
@@ -18,27 +16,25 @@ export default function Request() {
       .required("Email is required"),
     message: Yup.string().required("Message is required"),
   });
-  const defaultValues = {
-    name: "",
-    email: "",
-    message: "",
-  };
 
-  const methods = useForm({
-    resolver: yupResolver(RequestSchema),
-    defaultValues,
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      name: "",
+      message: "",
+    },
+    validationSchema: RequestSchema,
+    onSubmit: async (values, { setErrors, setSubmitting, resetForm }) => {
+      try {
+        console.log(values);
+        resetForm();
+      } catch (error) {
+        console.error(error);
+      }
+    },
   });
 
-  const { reset, handleSubmit } = methods;
-
-  const onSubmit = async (data) => {
-    try {
-      console.log("data", data);
-      reset();
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const { errors, touched, handleSubmit, getFieldProps } = formik;
 
   return (
     <>
@@ -64,35 +60,41 @@ export default function Request() {
           {isDesktop ? (
             <Box className="formWrap">
               <Typography className="requestText1">Send a request</Typography>
-              <Form {...methods}>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                  <Typography className="label" mt={3}>
+              <FormikProvider value={formik}>
+                <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
+                  <Typography className="label" mt={2}>
                     Your name
                   </Typography>
                   <TextField
-                    name="name"
+                    {...getFieldProps("name")}
                     variant="outlined"
                     className="inputText"
                     placeholder="Name"
+                    error={Boolean(touched.name && errors.name)}
+                    helperText={touched.name && errors.name}
                   />
-                  <Typography className="label" mt={3}>
+                  <Typography className="label" mt={2}>
                     Your e-mail
                   </Typography>
                   <TextField
-                    name="email"
+                    {...getFieldProps("email")}
                     variant="outlined"
                     className="inputText"
                     placeholder="E-mail"
+                    error={Boolean(touched.email && errors.email)}
+                    helperText={touched.email && errors.email}
                   />
-                  <Typography className="label" mt={3}>
+                  <Typography className="label" mt={2}>
                     Please write here your request, and we will contact you:
                   </Typography>
                   <TextField
-                    name="message"
+                    {...getFieldProps("message")}
                     placeholder="Message text"
                     className="inputText"
                     multiline
                     rows={4}
+                    error={Boolean(touched.message && errors.message)}
+                    helperText={touched.message && errors.message}
                   />
                   <Box my={5} sx={{ marginLeft: "300px" }}>
                     <Button
@@ -103,41 +105,47 @@ export default function Request() {
                       Send
                     </Button>
                   </Box>
-                </form>
-              </Form>
+                </Form>
+              </FormikProvider>
             </Box>
           ) : (
             <Box className="mobileformWrap">
               <Typography className="requestText2">Send a request</Typography>
-              <Form {...methods}>
-                <form onSubmit={handleSubmit(onSubmit)}>
+              <FormikProvider value={formik}>
+                <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
                   <Typography className="label" mt={2}>
                     Your name
                   </Typography>
                   <TextField
-                    name="name"
+                    {...getFieldProps("name")}
                     variant="outlined"
                     className="inputText2"
                     placeholder="Name"
+                    error={Boolean(touched.name && errors.name)}
+                    helperText={touched.name && errors.name}
                   />
                   <Typography className="label" mt={2}>
                     Your e-mail
                   </Typography>
                   <TextField
-                    name="email"
+                    {...getFieldProps("email")}
                     variant="outlined"
                     className="inputText2"
                     placeholder="E-mail"
+                    error={Boolean(touched.email && errors.email)}
+                    helperText={touched.email && errors.email}
                   />
                   <Typography className="label" mt={2}>
                     Please write here your request, and we will contact you:
                   </Typography>
                   <TextField
-                    name="message"
+                    {...getFieldProps("message")}
                     placeholder="Message text"
                     className="inputText2"
                     multiline
                     rows={4}
+                    error={Boolean(touched.message && errors.message)}
+                    helperText={touched.message && errors.message}
                   />
                   <Box
                     my={5}
@@ -151,8 +159,8 @@ export default function Request() {
                       Send
                     </Button>
                   </Box>
-                </form>
-              </Form>
+                </Form>
+              </FormikProvider>
             </Box>
           )}
         </Stack>
