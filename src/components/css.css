@@ -89,7 +89,7 @@
   }
   to {
     opacity: 1;
-    top: 41%;
+    top: 385px;
   }
 }
 
@@ -102,7 +102,7 @@
   to {
     transform: scale(1, 1) rotate(0deg);
     left: 36.45%;
-    top: 79%;
+    top: 740px;
   }
 }
 
@@ -131,7 +131,7 @@
   }
   100% {
     opacity: 1;
-    top: -200px;
+    top: -250px;
     left: 830px;
     height: 350px;
   }
@@ -146,7 +146,7 @@
   }
   to {
     opacity: 1;
-    top: 120px;
+    top: 90px;
     left: 658px;
     transform: scale(1, 1) rotate(0deg);
   }
@@ -167,7 +167,7 @@
   }
   to {
     opacity: 1;
-    right: 170px;
+    right: 195px;
     bottom: 250px;
   }
 }
@@ -466,7 +466,7 @@
   content: "";
   position: absolute;
   right: 0;
-  bottom: 14px;
+  bottom: 10px;
   height: 4px;
   width: 67%;
   background-color: #c63518;
@@ -586,6 +586,7 @@
   position: absolute;
   right: 0;
   bottom: 0;
+  height: 800px;
   animation-name: whatwedoimg1;
   animation-duration: 2s;
   animation-timing-function: ease;
