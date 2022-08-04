@@ -36,9 +36,10 @@ export default function Request() {
           },
           data: values,
         }).then((res) => {
-          console.log("sucess");
+          if(res.data.sent === true){
+            console.log("sent!");
+          }
         });
-        console.log(values);
         // resetForm();
       } catch (error) {
         console.error(error);
