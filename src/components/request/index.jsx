@@ -9,7 +9,6 @@ import "../css.css";
 import { useState } from "react";
 
 export default function Request() {
-
   const [sent, isSent] = useState(false);
 
   const isDesktop = useMediaQuery({
@@ -40,7 +39,7 @@ export default function Request() {
           },
           data: values,
         }).then((res) => {
-          if(res.data.sent === true){
+          if (res.data.sent === true) {
             isSent(true);
           }
         });
@@ -56,18 +55,24 @@ export default function Request() {
   return (
     <>
       <Box className="requestBack">
-        {sent && <Box className='requestModal'>
+        {sent && (
+          <Box className="requestModal">
             <Box className="modalWrap">
-              <Typography mb={3} className='modalText'>Your request has been sent</Typography>
+              <Typography mb={3} className="modalText">
+                Your request has been sent
+              </Typography>
               <Button
-                      variant="contained"
-                      className="okBtn"
-                      onClick={()=>{isSent(false)}}
-                    >
-                      Ok
+                variant="contained"
+                className="okBtn"
+                onClick={() => {
+                  isSent(false);
+                }}
+              >
+                Ok
               </Button>
             </Box>
-          </Box>}
+          </Box>
+        )}
         <Stack direction="column">
           {isDesktop ? (
             <Box className="logoWrap">
