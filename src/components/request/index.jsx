@@ -6,8 +6,12 @@ import { useFormik, Form, FormikProvider } from "formik";
 
 import { HOST_API } from "../../config";
 import "../css.css";
+import { useState } from "react";
 
 export default function Request() {
+
+  const [sent, isSent] = useState(false);
+
   const isDesktop = useMediaQuery({
     query: "(min-width: 1224px)",
   });
@@ -37,7 +41,7 @@ export default function Request() {
           data: values,
         }).then((res) => {
           if(res.data.sent === true){
-            console.log("sent!");
+            isSent(true);
           }
         });
         // resetForm();
@@ -52,6 +56,18 @@ export default function Request() {
   return (
     <>
       <Box className="requestBack">
+        {sent && <Box className='requestModal'>
+            <Box className="modalWrap">
+              <Typography mb={3} className='modalText'>Your request has been sent</Typography>
+              <Button
+                      variant="contained"
+                      className="okBtn"
+                      onClick={()=>{isSent(false)}}
+                    >
+                      Ok
+              </Button>
+            </Box>
+          </Box>}
         <Stack direction="column">
           {isDesktop ? (
             <Box className="logoWrap">

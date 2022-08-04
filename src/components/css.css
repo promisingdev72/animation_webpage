@@ -782,3 +782,34 @@
   border-radius: 5px !important;
   width: 100%;
 }
+.requestModal{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(41, 42, 49, 0.9);
+  z-index: 1;
+}
+.modalText{
+  font-family: 'Gotham' !important;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px !important;
+  line-height: 22px;
+  text-align: center !important;
+  color: #FFFFFF;
+}
+.okBtn{
+  background: #C63518 !important;
+  border-radius: 5px;
+  width: 300px;
+  height: 60px;
+  text-transform: initial !important;
+}
+.modalWrap{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
