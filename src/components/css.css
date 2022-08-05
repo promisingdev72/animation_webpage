@@ -186,7 +186,7 @@
 .bannerBack {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 940px;
   background-size: cover;
   background: linear-gradient(
       161.44deg,
@@ -280,7 +280,7 @@
   line-height: 44px;
   text-transform: uppercase;
   color: #d3d2d2;
-  text-align: center;
+  text-align: left;
   text-shadow: 14px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .mobile_doll {
@@ -457,7 +457,7 @@
 .whoareweBack {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 930px;
   background-size: cover;
   background: linear-gradient(
       286.42deg,
@@ -471,7 +471,7 @@
   content: "";
   position: absolute;
   right: 0;
-  bottom: 10px;
+  bottom: 5px;
   height: 4px;
   width: 67%;
   background-color: #c63518;
@@ -570,7 +570,7 @@
 .whatwedoBack {
   position: relative;
   width: 100%;
-  height: 85vh;
+  height: 800px;
   background-size: cover;
   background: linear-gradient(
       286.42deg,
@@ -638,7 +638,6 @@
 .footerback {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100px;
@@ -652,6 +651,7 @@
   border-top: 4px solid #c63518;
 }
 .footerText {
+  margin-left: 25vw;
   font-family: "Gotham";
   font-style: normal;
   font-weight: 400;

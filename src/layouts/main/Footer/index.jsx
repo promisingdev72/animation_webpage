@@ -12,7 +12,7 @@ export default function Footer() {
     <>
       <Box className="footerback">
         {isDesktop && (
-          <Box component="p" m={0} className="footerText">
+          <Box component="p" className="footerText">
             Copyright © 2022 Alitheia-Studios. All rights reserved.
           </Box>
         )}
