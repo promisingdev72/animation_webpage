@@ -1,14 +1,20 @@
 import { Box } from "@mui/material";
 import { useState, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 
 import "../css.css";
 
 export default function WhatWeDo() {
+  const isMiddle = useMediaQuery({
+    query: "(min-width: 1700px)",
+  });
+
   const [scrollPosition, setScrollPosition] = useState(0);
   const [lineforpad, setLineforpad] = useState("none");
   const [gamepadImg, setGamepadImg] = useState("none");
   const [whatwedoimg1, setWhatwedoimg1] = useState("none");
   const [whatwedoimg2, setWhatwedoimg2] = useState("none");
+  const [gamepadImg1, setGamepadImg1] = useState("none");
 
   const handleScroll = () => {
     const position = window.pageYOffset;
@@ -25,6 +31,7 @@ export default function WhatWeDo() {
   useEffect(() => {
     if (scrollPosition >= 1000 && scrollPosition <= 1100) {
       setGamepadImg("gamepadImg");
+      setGamepadImg1("gamepadImg1");
       setLineforpad("lineforpad");
       setWhatwedoimg1("whatwedoimg1");
       setWhatwedoimg2("whatwedoimg2");
@@ -38,7 +45,19 @@ export default function WhatWeDo() {
           className={lineforpad}
           src="/images/lineforpad.png"
         />
-        <Box component="img" className={gamepadImg} src="/images/gamepad.png" />
+        {isMiddle ? (
+          <Box
+            component="img"
+            className={gamepadImg}
+            src="/images/gamepad.png"
+          />
+        ) : (
+          <Box
+            component="img"
+            className={gamepadImg1}
+            src="/images/gamepad.png"
+          />
+        )}
         <Box className="whatwedo_wrap">
           <Box component="p" m={0} className="whatwedo_title">
             What we do
