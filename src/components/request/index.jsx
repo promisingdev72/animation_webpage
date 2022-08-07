@@ -1,5 +1,7 @@
 import * as Yup from "yup";
 import { Box, Button, Stack, Typography, TextField } from "@mui/material";
+import { LoadingButton } from "@mui/lab";
+
 import axios from "axios";
 import { useMediaQuery } from "react-responsive";
 import { useFormik, Form, FormikProvider } from "formik";
@@ -10,6 +12,7 @@ import { useState } from "react";
 
 export default function Request() {
   const [sent, isSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const isDesktop = useMediaQuery({
     query: "(min-width: 1224px)",
@@ -31,6 +34,7 @@ export default function Request() {
     validationSchema: RequestSchema,
     onSubmit: async (values, { setErrors, setSubmitting, resetForm }) => {
       try {
+        setLoading(true);
         axios({
           url: `${HOST_API}/api/request`,
           method: "POST",
@@ -41,6 +45,7 @@ export default function Request() {
         }).then((res) => {
           if (res.data.sent === true) {
             isSent(true);
+            setLoading(false);
           }
         });
         // resetForm();
@@ -131,13 +136,14 @@ export default function Request() {
                     helperText={touched.message && errors.message}
                   />
                   <Box my={5} sx={{ marginLeft: "300px" }}>
-                    <Button
+                    <LoadingButton
                       variant="contained"
                       className="sendBtn"
                       type="submit"
+                      loading={loading}
                     >
                       Send
-                    </Button>
+                    </LoadingButton>
                   </Box>
                 </Form>
               </FormikProvider>
@@ -185,13 +191,14 @@ export default function Request() {
                     my={5}
                     sx={{ display: "flex", justifyContent: "center" }}
                   >
-                    <Button
+                    <LoadingButton
                       variant="contained"
                       className="sendBtn2"
                       type="submit"
+                      loading={loading}
                     >
                       Send
-                    </Button>
+                    </LoadingButton>
                   </Box>
                 </Form>
               </FormikProvider>
