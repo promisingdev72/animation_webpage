@@ -8,9 +8,7 @@ export default function Footer() {
   const isDesktop = useMediaQuery({
     query: "(min-width: 1224px)",
   });
-  const isMiddle = useMediaQuery({
-    query: "(min-width: 1670px)",
-  });
+
   return (
     <>
       <Box className="footerback">

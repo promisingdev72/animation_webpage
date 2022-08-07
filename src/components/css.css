@@ -102,6 +102,18 @@
     transform: scale(1, 1) rotate(0deg) translate(-51.5%, 0);
   }
 }
+@keyframes doll1 {
+  from {
+    transform: scale(0.3, 0.3) rotate(65deg);
+    left: 60%;
+    top: -50%;
+  }
+  to {
+    left: 52.3%;
+    top: 81%;
+    transform: scale(1, 1) rotate(0deg) translate(-51.5%, 0);
+  }
+}
 
 @keyframes requestBtn {
   from {
@@ -418,6 +430,18 @@
   position: absolute;
   top: -70%;
   animation-name: doll;
+  animation-duration: 7s;
+  animation-timing-function: ease;
+  animation-direction: normal;
+  animation-delay: 14s;
+  animation-fill-mode: forwards;
+}
+.doll1 {
+  z-index: 1;
+  transform: scale(0.3, 0.3) rotate(65deg);
+  position: absolute;
+  top: -70%;
+  animation-name: doll1;
   animation-duration: 7s;
   animation-timing-function: ease;
   animation-direction: normal;

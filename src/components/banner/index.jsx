@@ -1,8 +1,12 @@
 import { Box, Button } from "@mui/material";
 
 import "../css.css";
+import { useMediaQuery } from "react-responsive";
 
 export default function Banner() {
+  const isMiddle = useMediaQuery({
+    query: "(min-width: 1670px)",
+  });
   return (
     <>
       <Box className="bannerBack">
@@ -27,7 +31,12 @@ export default function Banner() {
           Game developer Company
         </Box>
         <Box component="img" className="lines" src="/images/lines.png" />
-        <Box component="img" className="doll" src="/images/doll.png" />
+        {isMiddle ? (
+          <Box component="img" className="doll" src="/images/doll.png" />
+        ) : (
+          <Box component="img" className="doll1" src="/images/doll.png" />
+        )}
+
         <Button variant="contained" className="requestBtn" href="/request">
           Submit your request
         </Button>
