@@ -223,7 +223,6 @@
   background-color: #c63518;
 }
 .mbannerBack {
-  position: relative;
   height: 100%;
   background-size: cover;
   background: linear-gradient(
@@ -238,6 +237,18 @@
     ),
     linear-gradient(#282b33, #282b33);
   border-bottom: #c63518 4px solid;
+}
+.mobile_banner {
+  margin-left: 4px;
+}
+.errorMsg {
+  font-family: "Gotham";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: right;
+  color: #e45538;
 }
 .mwhoweareBack {
   position: relative;
@@ -497,6 +508,15 @@
   font-size: 18px !important;
   font-weight: 400 !important;
   margin-bottom: 120px !important;
+}
+.mloginBtn {
+  background: #c63518 !important;
+  width: 100%;
+  height: 60px;
+  text-transform: initial !important;
+  font-family: "Gotham";
+  font-size: 18px !important;
+  font-weight: 400 !important;
 }
 .whoareweBack {
   position: relative;
@@ -796,9 +816,7 @@
   right: 0;
   bottom: 0;
 }
-.formWrap {
-  padding: 5% 15%;
-}
+
 .mobileformWrap {
   padding: 20px 30px;
 }
@@ -836,9 +854,18 @@
     rgba(204, 214, 216, 0) 106.44%
   );
   border-radius: 5px !important;
-  width: 70%;
+  width: 100%;
 }
 .sendBtn {
+  background: #c63518 !important;
+  width: 300px;
+  height: 60px;
+  text-transform: initial !important;
+  font-family: "Gotham";
+  font-size: 18px !important;
+  font-weight: 400 !important;
+}
+.msendBtn {
   background: #c63518 !important;
   width: 300px;
   height: 60px;
@@ -865,15 +892,7 @@
   border-radius: 5px !important;
   width: 100%;
 }
-.requestModal {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: rgba(41, 42, 49, 0.9);
-  z-index: 1;
-}
+
 .modalText {
   font-family: "Gotham" !important;
   font-style: normal;
@@ -890,9 +909,70 @@
   height: 60px;
   text-transform: initial !important;
 }
+.requestModal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(41, 42, 49, 0.7);
+  z-index: 5;
+}
+.mrequestModal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: linear-gradient(
+      161.44deg,
+      rgba(193, 5, 19, 0.1) 12.57%,
+      rgba(0, 0, 0, 0) 76.73%
+    ),
+    linear-gradient(
+      286.42deg,
+      rgba(193, 5, 19, 0.2) 8.68%,
+      rgba(0, 0, 0, 0) 35.64%
+    ),
+    linear-gradient(#282b33, #282b33);
+  z-index: 5;
+}
+.formWrap {
+  padding: 5% 40% 5% 10%;
+}
+
+.formContent {
+  z-index: 9;
+  width: 100%;
+  height: 500px;
+  padding: 50px;
+  background: rgba(41, 42, 49, 0.98);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+.mformContent {
+  padding: 0 20px;
+}
+.mcloseBtn {
+  display: flex;
+  margin-left: auto;
+}
 .modalWrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+  padding: 50px;
+  background: rgba(41, 42, 49, 0.98);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+.mmodalWrap {
+  padding: 50% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -37,18 +37,27 @@ export default function Request() {
           {isDesktop ? (
             <Box className="formWrap">
               <Typography className="requestText1">Log-in</Typography>
-
-              <Typography className="label" mt={2} ml={2}>
-                Login:
-              </Typography>
+              <Box display="flex" justifyContent="space-between">
+                <Typography className="label" mt={2} ml={2}>
+                  Login:
+                </Typography>
+                <Typography className="errorMsg" mt={2}>
+                  Error: Login is incorrect.
+                </Typography>
+              </Box>
               <TextField
                 variant="outlined"
                 className="inputText"
                 placeholder="E-mail"
               />
-              <Typography className="label" mt={2} ml={2}>
-                Password
-              </Typography>
+              <Box display="flex" justifyContent="space-between">
+                <Typography className="label" mt={2} ml={2}>
+                  Password
+                </Typography>
+                <Typography className="errorMsg" mt={2}>
+                  Error: Password is incorrect.
+                </Typography>
+              </Box>
               <TextField
                 variant="outlined"
                 className="inputText"
@@ -69,17 +78,27 @@ export default function Request() {
           ) : (
             <Box className="mobileformWrap">
               <Typography className="requestText2">Log-in</Typography>
-              <Typography className="label" mt={2} ml={2}>
-                Login:
-              </Typography>
+              <Box display="flex" justifyContent="space-between">
+                <Typography className="label" mt={2} ml={2}>
+                  Login:
+                </Typography>
+                <Typography className="errorMsg" mt={2}>
+                  Error: Login is incorrect.
+                </Typography>
+              </Box>
               <TextField
                 variant="outlined"
                 className="inputText2"
                 placeholder="E-mail"
               />
-              <Typography className="label" mt={2} ml={2}>
-                Password
-              </Typography>
+              <Box display="flex" justifyContent="space-between">
+                <Typography className="label" mt={2} ml={2}>
+                  Password
+                </Typography>
+                <Typography className="errorMsg" mt={2}>
+                  Error: Password is incorrect.
+                </Typography>
+              </Box>
               <TextField
                 variant="outlined"
                 className="inputText2"
