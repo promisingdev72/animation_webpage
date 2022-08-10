@@ -10,6 +10,9 @@ export default function Banner() {
   return (
     <>
       <Box className="bannerBack">
+        <Button variant="contained" className="loginBtn" href="/login">
+          Log In
+        </Button>
         <Box component="img" className="logo" src="/images/logo.png" />
         <Box component="img" className="unhome" src="/images/unhome.png" />
         <Box component="div" className="pillar1" />

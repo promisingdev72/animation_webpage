@@ -468,6 +468,26 @@
   animation-delay: 20s;
   animation-fill-mode: forwards;
 }
+.loginBtn {
+  opacity: 0;
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  left: auto;
+  background: #c63518 !important;
+  width: 300px;
+  height: 60px;
+  text-transform: initial !important;
+  font-family: "Gotham";
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  animation-name: requestBtn;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-direction: normal;
+  animation-delay: 20s;
+  animation-fill-mode: forwards;
+}
 .mrequestBtn {
   text-transform: initial !important;
   background: #c63518 !important;
@@ -722,6 +742,23 @@
     ),
     linear-gradient(#282b33, #282b33);
 }
+.loginBack {
+  position: relative;
+  width: 100%;
+  height: 815px;
+  background-size: cover;
+  background: linear-gradient(
+      161.44deg,
+      rgba(193, 5, 19, 0.1) 12.57%,
+      rgba(0, 0, 0, 0) 76.73%
+    ),
+    linear-gradient(
+      286.42deg,
+      rgba(193, 5, 19, 0.2) 8.68%,
+      rgba(0, 0, 0, 0) 35.64%
+    ),
+    linear-gradient(#282b33, #282b33);
+}
 .logoWrap {
   position: relative;
   padding: 3% 0 1% 15%;
@@ -750,6 +787,11 @@
   background-color: #c63518;
 }
 .requestImg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.loginImg {
   position: absolute;
   right: 0;
   bottom: 0;
