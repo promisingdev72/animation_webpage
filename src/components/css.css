@@ -480,7 +480,6 @@
   animation-fill-mode: forwards;
 }
 .loginBtn {
-  opacity: 0;
   position: absolute !important;
   top: 0;
   right: 0;
@@ -492,12 +491,6 @@
   font-family: "Gotham";
   font-size: 18px !important;
   font-weight: 400 !important;
-  animation-name: requestBtn;
-  animation-duration: 2s;
-  animation-timing-function: ease;
-  animation-direction: normal;
-  animation-delay: 20s;
-  animation-fill-mode: forwards;
 }
 .mrequestBtn {
   text-transform: initial !important;

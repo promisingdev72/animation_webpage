@@ -1,4 +1,5 @@
 import { Box, Button, Stack, Typography, TextField } from "@mui/material";
+import validator from "validator";
 import { LoadingButton } from "@mui/lab";
 
 import axios from "axios";
@@ -15,35 +16,48 @@ export default function Banner() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMsg] = useState("");
+  const [nameErrorMsg, setNameErrorMsg] = useState("");
+  const [emailErrorMsg, setEmailErrorMsg] = useState("");
+  const [messageErrorMsg, setMessageErrorMsg] = useState("");
 
-  const isDesktop = useMediaQuery({
-    query: "(min-width: 1224px)",
-  });
   const isMiddle = useMediaQuery({
     query: "(min-width: 1670px)",
   });
 
   const handleSubmit = () => {
     try {
-      setLoading(true);
-      const data = {
-        name,
-        email,
-        message,
-      };
-      // axios({
-      //   url: `${HOST_API}/api/request`,
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   data: data,
-      // }).then((res) => {
-      //   if (res.data.sent === true) {
-      //     isSent(true);
-      //     setLoading(false);
-      //   }
-      // });
+      setNameErrorMsg("");
+      setEmailErrorMsg("");
+      setMessageErrorMsg("");
+      if (name === "") {
+        setNameErrorMsg("Error: Name is required");
+      } else if (email === "" || validator.isEmail(email) === false) {
+        setEmailErrorMsg("Error: E-mail is incorrect");
+      } else if (message === "") {
+        setMessageErrorMsg("Error: Enter data.");
+      } else {
+        setLoading(true);
+        const data = {
+          name,
+          email,
+          message,
+        };
+        isSent(true);
+        setLoading(false);
+        // axios({
+        //   url: `${HOST_API}/api/request`,
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        //   data: data,
+        // }).then((res) => {
+        //   if (res.data.sent === true) {
+        //     isSent(true);
+        //     setLoading(false);
+        //   }
+        // });
+      }
     } catch (error) {
       console.error(error);
     }
@@ -55,159 +69,103 @@ export default function Banner() {
         {contact && (
           <Box className="requestModal">
             <Stack direction="column">
-              {isDesktop ? (
-                <Box className="formWrap">
-                  {!sent && (
-                    <Box className="formContent">
-                      <Box display="flex" justifyContent="space-between">
-                        <Typography className="requestText1">
-                          Contact Us
-                        </Typography>
-                        <Box
-                          component="img"
-                          src="/images/closeBtn.png"
-                          onClick={() => {
-                            setContact(false);
-                          }}
-                        />
-                      </Box>
-                      <Box display="flex" justifyContent="space-between">
-                        <Typography className="label" mt={2} ml={2}>
-                          Your Name:
-                        </Typography>
-                        <Typography className="errorMsg" mt={2}>
-                          Error: Name is required.
-                        </Typography>
-                      </Box>
-                      <TextField
-                        variant="outlined"
-                        className="inputText"
-                        placeholder="Name"
-                        onChange={(e) => {
-                          setName(e.target.value);
-                        }}
-                      />
-                      <Box display="flex" justifyContent="space-between">
-                        <Typography className="label" mt={2} ml={2}>
-                          Your e-mail:
-                        </Typography>
-                        <Typography className="errorMsg" mt={2}>
-                          Error: Email is required.
-                        </Typography>
-                      </Box>
-                      <TextField
-                        variant="outlined"
-                        className="inputText"
-                        placeholder="E-mail"
-                        onChange={(e) => {
-                          setEmail(e.target.value);
-                        }}
-                      />
-                      <Box display="flex" justifyContent="space-between">
-                        <Typography className="label" mt={2} ml={2}>
-                          Please write here your request, and we will contact
-                          you:
-                        </Typography>
-                        <Typography className="errorMsg" mt={2}>
-                          Error: Enter Data.
-                        </Typography>
-                      </Box>
-                      <TextField
-                        placeholder="Message text"
-                        className="inputText"
-                        multiline
-                        rows={4}
-                        onChange={(e) => {
-                          setMsg(e.target.value);
-                        }}
-                      />
-                      <Box my={5} display="flex" justifyContent="center">
-                        <LoadingButton
-                          variant="contained"
-                          className="sendBtn"
-                          onClick={() => {
-                            handleSubmit();
-                          }}
-                          loading={loading}
-                        >
-                          Send
-                        </LoadingButton>
-                      </Box>
-                    </Box>
-                  )}
-
-                  {sent && (
-                    <Box className="modalWrap">
-                      <Typography mb={3} className="modalText">
-                        Your request has been sent
+              <Box className="formWrap">
+                {!sent && (
+                  <Box className="formContent">
+                    <Box display="flex" justifyContent="space-between">
+                      <Typography className="requestText1">
+                        Contact Us
                       </Typography>
-                      <Button
-                        variant="contained"
-                        className="okBtn"
+                      <Box
+                        component="img"
+                        src="/images/closeBtn.png"
                         onClick={() => {
-                          isSent(false);
                           setContact(false);
                         }}
-                      >
-                        Ok
-                      </Button>
+                      />
                     </Box>
-                  )}
-                </Box>
-              ) : (
-                <Box className="mobileformWrap">
-                  <Typography className="requestText2">Contact Us</Typography>
-                  <Typography className="label" mt={2} ml={2}>
-                    Your name
-                  </Typography>
-                  <TextField
-                    variant="outlined"
-                    className="inputText2"
-                    placeholder="Name"
-                    onChange={(e) => {
-                      setName(e.target.value);
-                    }}
-                  />
-                  <Typography className="label" mt={2} ml={2}>
-                    Your e-mail
-                  </Typography>
-                  <TextField
-                    variant="outlined"
-                    className="inputText2"
-                    placeholder="E-mail"
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                    }}
-                  />
-                  <Typography className="label" mt={2} ml={2}>
-                    Please write here your request, and we will contact you:
-                  </Typography>
-                  <TextField
-                    placeholder="Message text"
-                    className="inputText2"
-                    multiline
-                    rows={4}
-                    onChange={(e) => {
-                      setMsg(e.target.value);
-                    }}
-                  />
-                  <Box
-                    my={5}
-                    sx={{ display: "flex", justifyContent: "center" }}
-                  >
-                    <LoadingButton
+                    <Box display="flex" justifyContent="space-between">
+                      <Typography className="label" mt={2} ml={2}>
+                        Your Name:
+                      </Typography>
+                      <Typography className="errorMsg" mt={2}>
+                        {nameErrorMsg}
+                      </Typography>
+                    </Box>
+                    <TextField
+                      variant="outlined"
+                      className="inputText"
+                      placeholder="Name"
+                      onChange={(e) => {
+                        setName(e.target.value);
+                      }}
+                    />
+                    <Box display="flex" justifyContent="space-between">
+                      <Typography className="label" mt={2} ml={2}>
+                        Your e-mail:
+                      </Typography>
+                      <Typography className="errorMsg" mt={2}>
+                        {emailErrorMsg}
+                      </Typography>
+                    </Box>
+                    <TextField
+                      variant="outlined"
+                      className="inputText"
+                      placeholder="E-mail"
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                      }}
+                    />
+                    <Box display="flex" justifyContent="space-between">
+                      <Typography className="label" mt={2} ml={2}>
+                        Please write here your request, and we will contact you:
+                      </Typography>
+                      <Typography className="errorMsg" mt={2}>
+                        {messageErrorMsg}
+                      </Typography>
+                    </Box>
+                    <TextField
+                      placeholder="Message text"
+                      className="inputText"
+                      multiline
+                      rows={4}
+                      onChange={(e) => {
+                        setMsg(e.target.value);
+                      }}
+                    />
+                    <Box my={5} display="flex" justifyContent="center">
+                      <LoadingButton
+                        variant="contained"
+                        className="sendBtn"
+                        onClick={() => {
+                          handleSubmit();
+                        }}
+                        loading={loading}
+                      >
+                        Send
+                      </LoadingButton>
+                    </Box>
+                  </Box>
+                )}
+
+                {sent && (
+                  <Box className="modalWrap">
+                    <Typography mb={3} className="modalText">
+                      Your request has been sent
+                    </Typography>
+                    <Button
                       variant="contained"
-                      className="sendBtn2"
-                      loading={loading}
+                      className="okBtn"
                       onClick={() => {
-                        handleSubmit();
+                        isSent(false);
+                        setContact(false);
                       }}
                     >
-                      Send
-                    </LoadingButton>
+                      Ok
+                    </Button>
                   </Box>
-                </Box>
-              )}
+                )}
+              </Box>
             </Stack>
           </Box>
         )}

@@ -1,5 +1,6 @@
-import { Box, Button, Stack, Typography, TextField } from "@mui/material";
+import { Box, Stack, Typography, TextField } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
+import validator from "validator";
 
 import { useMediaQuery } from "react-responsive";
 
@@ -8,6 +9,32 @@ import { useState } from "react";
 
 export default function Request() {
   const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [emailErrorMsg, setEmailErrorMsg] = useState("");
+  const [passwordErrorMsg, setPasswordErrorMsg] = useState("");
+
+  const handleSubmit = () => {
+    try {
+      setEmailErrorMsg("");
+      setPasswordErrorMsg("");
+      if (email === "" || validator.isEmail(email) === false) {
+        setEmailErrorMsg("Error: Login is incorrect.");
+      } else if (password === "") {
+        setPasswordErrorMsg("Error: Password is Incorrect.");
+      } else {
+        setEmailErrorMsg("Login unknown");
+        setLoading(true);
+        const data = {
+          email,
+          password,
+        };
+        setLoading(false);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const isDesktop = useMediaQuery({
     query: "(min-width: 1224px)",
@@ -42,20 +69,23 @@ export default function Request() {
                   Login:
                 </Typography>
                 <Typography className="errorMsg" mt={2}>
-                  Error: Login is incorrect.
+                  {emailErrorMsg}
                 </Typography>
               </Box>
               <TextField
                 variant="outlined"
                 className="inputText"
                 placeholder="E-mail"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
               />
               <Box display="flex" justifyContent="space-between">
                 <Typography className="label" mt={2} ml={2}>
                   Password
                 </Typography>
                 <Typography className="errorMsg" mt={2}>
-                  Error: Password is incorrect.
+                  {passwordErrorMsg}
                 </Typography>
               </Box>
               <TextField
@@ -63,6 +93,9 @@ export default function Request() {
                 className="inputText"
                 placeholder="Password"
                 type="password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
               />
               <Box my={5} sx={{ marginLeft: "300px" }}>
                 <LoadingButton
@@ -70,6 +103,9 @@ export default function Request() {
                   className="sendBtn"
                   type="submit"
                   loading={loading}
+                  onClick={() => {
+                    handleSubmit();
+                  }}
                 >
                   Login
                 </LoadingButton>
@@ -83,20 +119,23 @@ export default function Request() {
                   Login:
                 </Typography>
                 <Typography className="errorMsg" mt={2}>
-                  Error: Login is incorrect.
+                  {emailErrorMsg}
                 </Typography>
               </Box>
               <TextField
                 variant="outlined"
                 className="inputText2"
                 placeholder="E-mail"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
               />
               <Box display="flex" justifyContent="space-between">
                 <Typography className="label" mt={2} ml={2}>
                   Password
                 </Typography>
                 <Typography className="errorMsg" mt={2}>
-                  Error: Password is incorrect.
+                  {passwordErrorMsg}
                 </Typography>
               </Box>
               <TextField
@@ -104,6 +143,9 @@ export default function Request() {
                 className="inputText2"
                 placeholder="Password"
                 type="password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
               />
               <Box my={5} sx={{ display: "flex", justifyContent: "center" }}>
                 <LoadingButton
@@ -111,6 +153,9 @@ export default function Request() {
                   className="sendBtn2"
                   type="submit"
                   loading={loading}
+                  onClick={() => {
+                    handleSubmit();
+                  }}
                 >
                   Login
                 </LoadingButton>

@@ -1,5 +1,6 @@
 import { Box, Button, Stack, Typography, TextField } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
+import validator from "validator";
 
 import axios from "axios";
 
@@ -14,33 +15,44 @@ export default function BannerMobile() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMsg] = useState("");
+  const [nameErrorMsg, setNameErrorMsg] = useState("");
+  const [emailErrorMsg, setEmailErrorMsg] = useState("");
+  const [messageErrorMsg, setMessageErrorMsg] = useState("");
 
   const handleSubmit = () => {
     try {
-      const data = {
-        name,
-        email,
-        message,
-      };
-
-      console.log(data);
-      isSent(true);
-      // setContact(false);
-      setLoading(false);
-      // axios({
-      //   url: `${HOST_API}/api/request`,
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   data: values,
-      // }).then((res) => {
-      //   if (res.data.sent === true) {
-      //     isSent(true);
-      //     setLoading(false);
-      //   }
-      // });
-      // resetForm();
+      setNameErrorMsg("");
+      setEmailErrorMsg("");
+      setMessageErrorMsg("");
+      if (name === "") {
+        setNameErrorMsg("Error: Name is required");
+      } else if (email === "" || validator.isEmail(email) === false) {
+        setEmailErrorMsg("Error: E-mail is incorrect");
+      } else if (message === "") {
+        setMessageErrorMsg("Error: Enter data.");
+      } else {
+        setLoading(true);
+        const data = {
+          name,
+          email,
+          message,
+        };
+        isSent(true);
+        setLoading(false);
+        // axios({
+        //   url: `${HOST_API}/api/request`,
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        //   data: data,
+        // }).then((res) => {
+        //   if (res.data.sent === true) {
+        //     isSent(true);
+        //     setLoading(false);
+        //   }
+        // });
+      }
     } catch (error) {
       console.error(error);
     }
@@ -58,7 +70,7 @@ export default function BannerMobile() {
                 onClick={() => {
                   setContact(false);
                 }}
-                mb={5}
+                my={5}
               />
               <Typography className="requestText1">Contact Us</Typography>
 
@@ -67,7 +79,7 @@ export default function BannerMobile() {
                   Your Name:
                 </Typography>
                 <Typography className="errorMsg" mt={2}>
-                  Error: Name is required.
+                  {nameErrorMsg}
                 </Typography>
               </Box>
               <TextField
@@ -83,7 +95,7 @@ export default function BannerMobile() {
                   Your e-mail:
                 </Typography>
                 <Typography className="errorMsg" mt={2}>
-                  Error: Email is required.
+                  {emailErrorMsg}
                 </Typography>
               </Box>
               <TextField
@@ -99,7 +111,7 @@ export default function BannerMobile() {
                   Please write here your request, and we will contact you:
                 </Typography>
                 <Typography className="errorMsg" mt={2}>
-                  Error: Enter Data.
+                  {messageErrorMsg}
                 </Typography>
               </Box>
               <TextField
@@ -135,6 +147,7 @@ export default function BannerMobile() {
                 className="okBtn"
                 onClick={() => {
                   isSent(false);
+                  setContact(false);
                 }}
               >
                 Ok
