@@ -31,19 +31,19 @@ export default function Banner() {
         email,
         message,
       };
-      axios({
-        url: `${HOST_API}/api/request`,
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: data,
-      }).then((res) => {
-        if (res.data.sent === true) {
-          isSent(true);
-          setLoading(false);
-        }
-      });
+      // axios({
+      //   url: `${HOST_API}/api/request`,
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   data: data,
+      // }).then((res) => {
+      //   if (res.data.sent === true) {
+      //     isSent(true);
+      //     setLoading(false);
+      //   }
+      // });
     } catch (error) {
       console.error(error);
     }
